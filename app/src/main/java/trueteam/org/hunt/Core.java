@@ -1,5 +1,7 @@
 package trueteam.org.hunt;
 
+import trueteam.org.hunt.messaging.Messenger;
+
 /**
  * Created by Slon on 21.02.2017.
  */
@@ -19,6 +21,11 @@ public class Core {
 
         // ...
         return false;
+    }
+
+    public Messenger getMessenger() {
+
+        return null;
     }
 
     interface ResultCallback {

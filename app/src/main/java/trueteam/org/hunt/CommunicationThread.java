@@ -58,7 +58,15 @@ public class CommunicationThread extends Thread {
                         //      MapManager.apply()
                     }
                 } else if(target.equals(Target.ENCOUNTER.getName())) {
-                    String messageField = message.getValue(MessageFields.)
+                    String messageField = message.getValue(MessageFields.MESSAGE);
+                    if(messageField.equals("start_encounter")) {
+                        //
+                    } else if(messageField.equals("start_catching")) {
+                        //
+                    } else {
+                        String winner = message.getValue(MessageFields.WINNER);
+                        // ...
+                    }
                 }
             } catch (IOException e) {
                 e.printStackTrace();
