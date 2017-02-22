@@ -52,6 +52,7 @@ public class CommunicationThread extends Thread {
                         // getLocation ?
                         // Core.getLocation()
                         // messenger.send(its location)
+                        Core.getInstance().sendLocation();
                     } else if(type.equals(Type.RESPONSE.getName())){
                         // make locations from field location
                         // handler.let map manager apply ->

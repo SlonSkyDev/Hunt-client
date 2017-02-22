@@ -14,22 +14,13 @@ import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText etLogin;
-    private EditText etPassword;
-    private Button btnRegister;
-    private TextView tvHasAnAccount;
-
-    Handler h;
-    TextView test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        etLogin = (EditText) findViewById(R.id.loginRegister);
-        etPassword = (EditText) findViewById(R.id.passwordRegister);
-        btnRegister = (Button) findViewById(R.id.register);
-        tvHasAnAccount = (TextView) findViewById(R.id.authLabel);
+        Button btnRegister = (Button) findViewById(R.id.register);
+        TextView tvHasAnAccount = (TextView) findViewById(R.id.authLabel);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,13 +31,13 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-         test = (TextView) findViewById(R.id.textView);
-        h = new Handler() {
-            public void handleMessage(android.os.Message msg) {
-                // обновляем TextView
-                test.setText("tgnf  " + msg.what);
+        tvHasAnAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this.getBaseContext(), AuthorizationActivity.class);
+                startActivity(intent);
             }
-        };
+        });
 
     }
 

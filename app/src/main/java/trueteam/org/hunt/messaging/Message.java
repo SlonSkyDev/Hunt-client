@@ -15,24 +15,24 @@ public class Message {
     private Map<String, String> fields;
 
     public Message(Type type, Target target, Map<String, String> fields) {
-        Objects.requireNonNull(type);
-        Objects.requireNonNull(target);
-        Objects.requireNonNull(fields);
+//        Objects.requireNonNull(type);
+//        Objects.requireNonNull(target);
+//        Objects.requireNonNull(fields);
         this.type = type;
         this.target = target;
         this.fields = fields;
     }
 
     public Message(Type type, Target target){
-        Objects.requireNonNull(type);
-        Objects.requireNonNull(target);
+//        Objects.requireNonNull(type);
+//        Objects.requireNonNull(target);
         this.type = type;
         this.target = target;
         this.fields = new HashMap<String, String>();
     }
 
     public Message(String json) throws IOException {
-        Objects.requireNonNull(json);
+//        Objects.requireNonNull(json);
         HashMap<String,String> result =
                 new ObjectMapper().readValue(json, HashMap.class);
         for(Target target: Target.values()){
@@ -54,8 +54,8 @@ public class Message {
 
 
     public void addExtraField(String key, String value) throws MessageFormatException{
-        Objects.requireNonNull(key);
-        Objects.requireNonNull(value);
+//        Objects.requireNonNull(key);
+//        Objects.requireNonNull(value);
         if(MessageFields.TARGET.equals(key)){
             throw new MessageFormatException("Target isn't allowed to add.");
         }
@@ -76,7 +76,7 @@ public class Message {
         return fields.get(key);
     }
 
-    public String toJSON() throws JsonProcessingException {
+    public String toJSON() throws IOException {
         Map<String, String> allFields = new HashMap<>(fields);
         allFields.put(MessageFields.TYPE , type.getName());
         allFields.put(MessageFields.TARGET , target.getName());

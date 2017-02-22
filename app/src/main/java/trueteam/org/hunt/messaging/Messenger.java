@@ -15,14 +15,14 @@ public class Messenger {
     private PrintWriter out;
 
     public Messenger(Socket socket) throws IOException{
-        Objects.requireNonNull(socket);
+//        Objects.requireNonNull(socket);
         this.socket = socket;
         this.in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         this.out = new PrintWriter(socket.getOutputStream(), true);
     }
 
     public void send(Message message) throws IOException{
-        Objects.requireNonNull(message);
+//        Objects.requireNonNull(message);
         out.println(message.toJSON());
     }
 

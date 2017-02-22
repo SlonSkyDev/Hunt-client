@@ -28,7 +28,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/loginRegister"
+            android:id="@+id/loginAuthorisation"
             android:hint="Логин"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
@@ -40,16 +40,39 @@
             android:inputType="textPassword"
             android:ems="10"
             android:hint="Пароль"
-            android:id="@+id/passwordRegister"
+            android:id="@+id/passwordAuthorization"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/role"
+            android:layout_marginTop="50dp"
+            android:hint="Роль">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hunter"
+                android:id="@+id/hunter" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/runner"
+                android:id="@+id/runner"
+                android:layout_marginTop="20dp"
+                android:checked="true" />
+        </RadioGroup>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Авторизоваться"
-            android:id="@+id/register"
+            android:id="@+id/authorize"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="100dp" />
     </LinearLayout>

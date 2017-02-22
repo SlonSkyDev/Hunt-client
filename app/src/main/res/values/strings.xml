@@ -4,4 +4,6 @@
 
     <string name="has_an_account"><u>Уже есть аккаунт?</u></string>
     <string name="title_activity_maps">Map</string>
+    <string name="runner">RUNNER</string>
+    <string name="hunter">HUNTER</string>
 </resources>
